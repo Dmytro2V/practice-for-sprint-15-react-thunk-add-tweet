@@ -16,6 +16,7 @@ router.get(
 router.post(
   '/',
   asyncHandler(async (req, res) => {
+    console.log('req.body',req.body);
     const addTweet = await Tweet.create(req.body)
     res.json(addTweet);
   })

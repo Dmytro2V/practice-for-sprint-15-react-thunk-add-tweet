@@ -30,7 +30,9 @@ export const getAllTweets = () => async (dispatch) => {
 export const writeTweet = (payload) => async dispatch => {
   const response = await fetch('/api/tweets', {
     method: 'POST',
-    'Content-Type': 'application/json',
+    headers:{
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify(payload)
   });
 
@@ -53,9 +55,10 @@ const tweetsReducer = (state = initialState, action) => {
       return newState;
     }
     case ADD_TWEET: {
-      const newState = {};
-      const id = tweet.id;
-      newState ={...state, [id]:tweet}
+      
+      const id = action.tweet.id;
+      const newState ={...state, [id]:action.tweet}
+      return newState;
     }
     default:
       return state;

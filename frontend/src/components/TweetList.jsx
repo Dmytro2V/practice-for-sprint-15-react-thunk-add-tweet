@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllTweets } from './store/tweet';
+import { getAllTweets } from '../store/tweet';
 
 const TweetList = () => {
   const dispatch = useDispatch();

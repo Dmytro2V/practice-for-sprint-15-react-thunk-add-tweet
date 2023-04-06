@@ -1,9 +1,10 @@
-import TweetList from './TweetList';
+import {TweetList, CreateTweet} from './components';
 
 function App() {
   return (
     <>
       <TweetList />
+      <CreateTweet/>
     </>
   );
 }
